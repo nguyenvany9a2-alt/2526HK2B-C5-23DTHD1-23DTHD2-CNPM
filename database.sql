@@ -12,6 +12,16 @@ CREATE TABLE Products (
     image NVARCHAR(255)
 );
 
+<<<<<<< HEAD
+=======
+CREATE TABLE Cart (
+    id INT PRIMARY KEY IDENTITY,
+    user_id INT,
+    product_id INT,
+    quantity INT
+);
+
+>>>>>>> feature/CNPM-01-database-fix
 CREATE TABLE Orders (
     id INT PRIMARY KEY IDENTITY,
     user_id INT,
