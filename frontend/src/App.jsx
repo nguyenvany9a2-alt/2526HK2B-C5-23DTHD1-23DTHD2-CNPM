@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 
 import HomePage from "./pages/HomePage";
 import InputDrugPage from "./pages/InputDrugPage";
@@ -9,6 +10,18 @@ import DrugInteractionPage from "./pages/DrugInteractionPage";
 import HistoryPage from "./pages/HistoryPage";
 
 function App() {
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:5000/")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Backend response:", data);
+      })
+      .catch((err) => {
+        console.log("Lỗi kết nối backend:", err);
+      });
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>
